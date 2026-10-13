@@ -69,18 +69,18 @@ $appProcess =$null
 try {
     Write-Host "  -> Spawning background server on port 8080..." -ForegroundColor Gray
     $appPath = Join-Path$SampleAppDir "app.py"
-    # Quote the path to handle spaces in folder names
     $appProcess = Start-Process py -ArgumentList "`"$appPath`"" -WorkingDirectory "$RootDir" -PassThru
 
-    # Check TCP socket connectivity on 127.0.0.1 (IPv4)
     $isReady =$false
     for ($i = 0; $i -lt 10; $i++) {
         Start-Sleep -Seconds 1
         $tcp = New-Object System.Net.Sockets.TcpClient
         try {
             $tcp.Connect("127.0.0.1", 8080)
-            if ($tcp.Connected) {$isReady = $true$tcp.Close()
-                break
+            if ($tcp.Connected) {
+                $isReady =$true;
+                $tcp.Close();
+                break;
             }
         } catch {}
         finally {
