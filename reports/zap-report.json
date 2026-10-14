@@ -1,9 +1,17 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Tue, 13 Oct 2026 15:10:09",
-	"created": "2026-10-13T15:10:09.130141931Z",
+	"@generated": "Wed, 14 Oct 2026 06:59:13",
+	"created": "2026-10-14T06:59:13.275502954Z",
 	"insights":[
+		{
+			"level": "Low",
+			"reason": "Warning",
+			"site": "",
+			"key": "insight.log.warn",
+			"description": "ZAP warnings logged - see the zap.log file for details",
+			"statistic": "3"
+		},
 		{
 			"level": "Info",
 			"reason": "Informational",
@@ -63,7 +71,7 @@
 					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
 					"instances":[ 
 						{
-							"id": "2",
+							"id": "3",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -73,7 +81,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "4",
+							"id": "5",
 							"uri": "http://host.docker.internal:8080/robots.txt",
 							"nodeName": "http:\/\/host.docker.internal:8080\/robots.txt",
 							"method": "GET",
@@ -81,19 +89,9 @@
 							"attack": "",
 							"evidence": "",
 							"otherinfo": ""
-						},
-						{
-							"id": "5",
-							"uri": "http://host.docker.internal:8080/sitemap.xml",
-							"nodeName": "http:\/\/host.docker.internal:8080\/sitemap.xml",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "",
-							"otherinfo": ""
 						}
 					],
-					"count": "3",
+					"count": "2",
 					"systemic": false,
 					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
 					"otherinfo": "",
@@ -113,7 +111,7 @@
 					"desc": "<p>The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.</p>",
 					"instances":[ 
 						{
-							"id": "0",
+							"id": "2",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -130,7 +128,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
 					"cweid": "1021",
 					"wascid": "15",
-					"sourceid": "1"
+					"sourceid": "6"
 				},
 				{
 					"pluginid": "90004",
@@ -143,7 +141,7 @@
 					"desc": "<p>Cross-Origin-Embedder-Policy header is a response header that prevents a document from loading any cross-origin resources that don't explicitly grant the document permission (using CORP or CORS).</p>",
 					"instances":[ 
 						{
-							"id": "19",
+							"id": "15",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -160,7 +158,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90004",
@@ -173,7 +171,7 @@
 					"desc": "<p>Cross-Origin-Opener-Policy header is a response header that allows a site to control if others included documents share the same browsing context. Sharing the same browsing context with untrusted documents might lead to data leak.</p>",
 					"instances":[ 
 						{
-							"id": "20",
+							"id": "16",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -190,7 +188,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Opener-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "90004",
@@ -203,7 +201,7 @@
 					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
 					"instances":[ 
 						{
-							"id": "18",
+							"id": "14",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -220,7 +218,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cross-Origin-Embedder-Policy</p>",
 					"cweid": "693",
 					"wascid": "14",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10063",
@@ -233,7 +231,7 @@
 					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
 					"instances":[ 
 						{
-							"id": "17",
+							"id": "13",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -243,7 +241,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "15",
+							"id": "20",
 							"uri": "http://host.docker.internal:8080/robots.txt",
 							"nodeName": "http:\/\/host.docker.internal:8080\/robots.txt",
 							"method": "GET",
@@ -253,7 +251,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "16",
+							"id": "21",
 							"uri": "http://host.docker.internal:8080/sitemap.xml",
 							"nodeName": "http:\/\/host.docker.internal:8080\/sitemap.xml",
 							"method": "GET",
@@ -270,7 +268,7 @@
 					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
 					"cweid": "693",
 					"wascid": "15",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10036",
@@ -283,7 +281,7 @@
 					"desc": "<p>The web/application server is leaking version information via the \"Server\" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.</p>",
 					"instances":[ 
 						{
-							"id": "6",
+							"id": "9",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -293,7 +291,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "8",
+							"id": "7",
 							"uri": "http://host.docker.internal:8080/robots.txt",
 							"nodeName": "http:\/\/host.docker.internal:8080\/robots.txt",
 							"method": "GET",
@@ -303,7 +301,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "9",
+							"id": "8",
 							"uri": "http://host.docker.internal:8080/sitemap.xml",
 							"nodeName": "http:\/\/host.docker.internal:8080\/sitemap.xml",
 							"method": "GET",
@@ -320,7 +318,7 @@
 					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
 					"cweid": "497",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				},
 				{
 					"pluginid": "10021",
@@ -363,7 +361,7 @@
 					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
 					"instances":[ 
 						{
-							"id": "14",
+							"id": "12",
 							"uri": "http://host.docker.internal:8080",
 							"nodeName": "http:\/\/host.docker.internal:8080",
 							"method": "GET",
@@ -373,7 +371,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "12",
+							"id": "17",
 							"uri": "http://host.docker.internal:8080/robots.txt",
 							"nodeName": "http:\/\/host.docker.internal:8080\/robots.txt",
 							"method": "GET",
@@ -383,7 +381,7 @@
 							"otherinfo": "In the absence of an explicitly specified caching lifetime directive in the response, a liberal lifetime heuristic of 1 year was assumed. This is permitted by rfc7234."
 						},
 						{
-							"id": "13",
+							"id": "18",
 							"uri": "http://host.docker.internal:8080/sitemap.xml",
 							"nodeName": "http:\/\/host.docker.internal:8080\/sitemap.xml",
 							"method": "GET",
@@ -400,7 +398,7 @@
 					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
 					"cweid": "524",
 					"wascid": "13",
-					"sourceid": "6"
+					"sourceid": "1"
 				}
 			]
 		}
